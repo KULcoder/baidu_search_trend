@@ -8,8 +8,8 @@ section {
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 10;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 

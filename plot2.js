@@ -32,7 +32,7 @@ Promise.all([
     .attr("preserveAspectRatio", "xMinYMin meet")
     .attr("viewBox", "0 0 900 500") // seems like the graph needs to move to right a little bit
     .append("g")
-    .attr("transform", "translate(" + margin_plot2.left + "," + margin_plot2.top + ")");
+    .attr("transform", "translate(" + (margin_plot2.left+10) + "," + margin_plot2.top + ")");
 
 
     // .attr("width", width_plot2 + margin_plot2.left + margin_plot2.right) // add margin when define the svg
