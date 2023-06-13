@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Final Project</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <section>
+      <h1 class="hero-title"> <span class="special-word">COVID</span>: A Search Trend</h1>
+      <h2 class="hero-author">By Keyu Long</h2>
+      <p class="intro-text">
+        We don't always need direct data to gauge the situation. When the People's 
+        Republic of China<span class="footnote">1</span> eased the nationwide lockdown policy at the end of 2022, 
+        they also ceased the release of daily COVID-19 data. Nonetheless, we can still
+        get a sense of the situation by examining the search trends on Baidu, 
+        China's most popular search engine.
+      </p>
+    </section>
+
+    <!-- chart 1 -->
+    <section>
+      <h1 class="section-title">Geographical Representation</h1>
+      <p class="section-text">
+        Observe the Baidu search trend<span class="footnote">1</span> for the term <span class="special-word-intext">fever</span> across different 
+        <span class="special-word-intext">provinces<span class="footnote">2</span> from November 2022 to February 2023.
+      </p>
+    </section>
+    <div class="chart-holder">
+      <div id="map-container"></div>
+      <div id="new-map-container"></div>
+      <div class="slider-q1">
+        <p>Date: <span id="demo">11/1/2022</span></p>
+        <input type="range" min="1" max="118" value="1" class="slider" id="myRange">
+      </div>
+    </div>
+
+    <!-- chart 2 -->
+    <section>
+      <h1 class="section-title">Trends over Different Words</h1>
+      <p class="section-text">
+        Different words can describe the situation from different <span class="special-word-intext">perspectives</span>.
+        We will explore search volumn<span class="footnote">3</span> of <span class="special-word-intext">fever, cough, headache, insomnia,</span> and 
+        <span class="special-word-intext">ICU</span> in whole nation over time.
+      </p>
+    </section>
+    <div class="chart-holder">
+      <button id="toggleButton">Change Between Raw/Standardized Data</button>
+      <div id="chart-container"></div>
+    </div>
+
+    <!-- chart 3 -->
+    <section>
+      <h1 class="section-title">Relationships between Provinces</h1>
+      <p class="section-text">
+        With the trending data of searching <span class="special-word-intext">fever</span> of different 
+        <span class="special-word-intext">provinces</span>, we can find the 
+        <span class="special-word-intext">relationship<span class="footnote">4</span></span> between them.
+      </p>
+    </section>
+    <div class="chart-holder">
+      <div id="network-container"></div>
+    </div>
+
+    <!-- Footnotes -->
+    <section>
+      <p class="footnotes-text">
+        <span class="footnote">1</span>. Log scale is used to better show the differences between provinces.
+        <br/>
+        <span class="footnote">2</span>. Mainland China is considered, excluding Taiwan, Hong Kong, and Macao as they have different COVID-19 policies.
+        <br/>
+        <span class="footnote">3</span>. In addition to raw data, standardized data is calculated using the z-score standardization method for the search volume of each keyword.
+        <br/>
+        <span class="footnote">4</span>. The relationships are calculated by the correlation coefficient of the search trends in different provinces.
+      </p>
+      </section>
+
+    <script src="plot1.js"></script>
+    <script src="plot2.js"></script>
+    <script src="plot3.js"></script>
+  </body>
+</html>

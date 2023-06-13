@@ -1,0 +1,126 @@
+section {
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: Georgia, serif;
+    width: 100%;
+    margin: auto;
+}
+
+.special-word {
+    color: grey; 
+  }
+
+.hero-author {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.751);
+    text-align: center;
+}
+
+.chart-holder {
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight:550;
+    width: 100%;
+    margin: auto;
+}
+
+.section-title {
+    display: block;
+    font-size: 50px;
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    margin-bottom: 35px;
+}
+
+.section-text {
+    font-size: 28px;
+    line-height: 1.1428571429;
+    font-weight: 600;
+    letter-spacing: .007em;
+    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: rgba(82, 82, 82, 0.751);
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+}
+
+.special-word-intext {
+    color: black;
+}
+
+.footnote {
+    font-size: 12px;
+    /* color: rgba(62, 62, 62, 0.751); */
+}
+
+.footnotes-text {
+    font-size: 12px;
+    color: rgba(24, 24, 24, 0.751);
+    font-family: Arial, sans-serif;
+}
+
+/* svg {
+    border: 2px solid hotpink
+} */
+
+.slider {
+    -webkit-appearance: none;
+    max-width: 800px;
+    width: 80%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    /* border-radius: 50%;  */
+    background: #7d7a4fc8;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+    background-color: rgba(255, 252, 252, 0.8);
+}
+
+#toggleButton {
+    /* margin-left: 50px; */
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #8b8d8b; /* Green */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggleButton:hover {
+    background-color: #84a69e; /* Darker green */
+}
