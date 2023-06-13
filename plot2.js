@@ -19,8 +19,8 @@ Promise.all([
     // console.log(standard_json);
 
     // step 1 define the constants and the svg
-    let margin_plot2 = { top: 20, right: 20, bottom: 20, left: 50 },
-    width_plot2 = 1000 - margin_plot2.left - margin_plot2.right,
+    let margin_plot2 = { top: 20, right: 20, bottom: 20, left: 40 },
+    width_plot2 = 900 - margin_plot2.left - margin_plot2.right,
     height_plot2 = 500 - margin_plot2.top - margin_plot2.bottom;
 
     transitionDuration = 200;
@@ -29,10 +29,16 @@ Promise.all([
     let svg_plot2 = d3
     .select("#chart-container")
     .append("svg")
-    .attr("width", width_plot2 + margin_plot2.left + margin_plot2.right) // add margin when define the svg
-    .attr("height", height_plot2 + margin_plot2.top + margin_plot2.bottom) // add margin when define the svg
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 900 500") // seems like the graph needs to move to right a little bit
     .append("g")
     .attr("transform", "translate(" + margin_plot2.left + "," + margin_plot2.top + ")");
+
+
+    // .attr("width", width_plot2 + margin_plot2.left + margin_plot2.right) // add margin when define the svg
+    // .attr("height", height_plot2 + margin_plot2.top + margin_plot2.bottom) // add margin when define the svg
+    // .append("g")
+    // .attr("transform", "translate(" + margin_plot2.left + "," + margin_plot2.top + ")");
 
     // step 2 define the scale
 
@@ -76,7 +82,7 @@ Promise.all([
 
     // step 3 define the axis
     let xAxis = d3.axisBottom(xScale);
-    let yAxisRaw = d3.axisLeft(yScaleRaw).ticks(5);
+    let yAxisRaw = d3.axisLeft(yScaleRaw);
 
     // step 4 draw the axis
     svg_plot2
@@ -147,7 +153,7 @@ Promise.all([
     
     layer
     .append("path")
-    .attr("class", "area")
+    .attr("class", "area chart-line")
     .style("fill", (d) => colorScale(d.key))
     .attr("d", areaGenerator);
 
@@ -202,7 +208,7 @@ Promise.all([
 
     // step 9 interaction: highlight the area when mouseover
 
-    svg_plot2.selectAll("path")
+    svg_plot2.selectAll(".chart-line")
     .on("mouseover", handleMouseover)
     .on("mouseout", handleMouseout);
 

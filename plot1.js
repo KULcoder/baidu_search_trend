@@ -6,13 +6,17 @@ let margin = {top: 10, right: 30, bottom: 30, left: 60},
 
 transitionDuration = 150;
 
-// step 2 define the svg
+// step 2 define the svg, using viewBox to make the svg responsive
 let svg_q1 = d3.select("#map-container")
     .append("svg")
-    .attr("width", width + margin.left + margin.right) // add margin when define the svg
-    .attr("height", height + margin.top + margin.bottom) // add margin when define the svg
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 1000 500")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // .attr("width", width + margin.left + margin.right) // add margin when define the svg
+    // .attr("height", height + margin.top + margin.bottom) // add margin when define the svg
+
 
 // step 3 define the scale
 
@@ -37,10 +41,7 @@ let projection = d3
 .translate([-(width)/2 - 270 , height + 220])
 .center([0, 0]);
 
-
 let geoGenerator = d3.geoPath().projection(projection);
-
-
 
 function drawMap(geojson, current_index) {
     let countries = svg_q1.selectAll("path").data(geojson.features);

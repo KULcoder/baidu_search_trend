@@ -9,8 +9,8 @@ let height_plot3 = 600 - margin_plot3.top - margin_plot3.bottom;
 let svg_q3 = d3
     .select("#network-container")
     .append("svg")
-    .attr("width", width_plot3 + margin_plot3.left + margin_plot3.right) // add margin when define the svg
-    .attr("height", height_plot3 + margin_plot3.top + margin_plot3.bottom) // add margin when define the svg
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 1000 600")
     .append("g")
     .attr("transform", "translate(" + margin_plot3.left + "," + margin_plot3.top + ")");
 

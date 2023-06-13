@@ -124,3 +124,7 @@ section {
 #toggleButton:hover {
     background-color: #84a69e; /* Darker green */
 }
+
+.x.axis .domain {
+    stroke: black;
+}
